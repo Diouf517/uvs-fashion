@@ -295,21 +295,7 @@ footer {
   color: #e91e63;
 }
 
-/* Bannière Hommes */
-.banner-hommes {
-  background: url("assets/images/banner-hommes.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-}
 
-/* Bannière Femmes */
-.banner-femmes {
-  background: url("assets/images/banner-femmes.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-}
 
 .banner h2,
 .banner-hommes h2,
@@ -330,10 +316,10 @@ footer {
 
 
 
-/* Bannière Hommes */
+/* Bannière1 */
 .banner-hommes {
   position: relative;
-  background: url("../assets/images/banner-hommes.jpg") center/cover no-repeat;
+  background: url("../assets/images/banner1.jpg") center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
@@ -352,10 +338,10 @@ footer {
   z-index: 1;
 }
 
-/* Bannière Femmes */
+/* Bannière2 */
 .banner-femmes {
   position: relative;
-  background: url("../assets/images/banner-femmes.jpg") center/cover no-repeat;
+  background: url("../assets/images/banner2.jpg") center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
@@ -801,4 +787,58 @@ footer {
   margin: 5px 0;
   display: flex;
   align-items: center;
+}
+/* Bannière Hommes */
+.banner1 {
+  background: url("assets/images/banner1.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.banner1 h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.banner1 p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+/* Bannière Hommes */
+.banner1 {
+  position: relative;
+  background: url("assets/images/banner1.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* Bannière Femmes */
+.banner2 {
+  position: relative;
+  background: url("assets/images/banner2.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* Overlay sombre pour les deux bannières */
+.banner1::before,
+.banner2::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); /* 40% noir transparent */
+  z-index: 1;
+}
+
+/* Contenu au-dessus de l’overlay */
+.banner-content {
+  position: relative;
+  z-index: 2;
 }
