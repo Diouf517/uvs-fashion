@@ -1,7 +1,3 @@
-// --- Compteur du panier ---
-let panierCount = 0;
-const panierLink = document.getElementById("panier-link");
-
 // --- Fonction notification stylisée avec type ---
 function showNotification(message, type = "info") {
   let notif = document.createElement("div");
@@ -9,18 +5,18 @@ function showNotification(message, type = "info") {
   notif.textContent = message;
   document.body.appendChild(notif);
 
-  // Afficher
   setTimeout(() => notif.classList.add("show"), 100);
-
-  // Disparaître après 3s
   setTimeout(() => {
     notif.classList.remove("show");
     setTimeout(() => notif.remove(), 400);
   }, 3000);
 }
 
-function updatePanier() {
-  panierLink.textContent = `Panier (${panierCount})`;
+// --- Mettre à jour le compteur global ---
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("panier-link").textContent = `Panier (${totalItems})`;
 }
 
 // --- Boutons "Ajouter au panier" ---
@@ -28,11 +24,8 @@ const addButtons = document.querySelectorAll(".product button");
 
 addButtons.forEach(button => {
   button.addEventListener("click", () => {
-    panierCount++;
-    updatePanier();
     showNotification("✅ Produit ajouté au panier !", "success");
 
-    // --- Stocker le produit dans localStorage ---
     let productName = button.parentElement.querySelector("h3").textContent;
     let productPrice = parseInt(button.parentElement.querySelector("p").textContent.replace(/\D/g, ""));
     let productImage = button.parentElement.querySelector("img").getAttribute("src");
@@ -47,6 +40,7 @@ addButtons.forEach(button => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount(); // 🔥 mise à jour immédiate
   });
 });
 
@@ -106,17 +100,9 @@ function removeFromCart(index) {
 // --- Vider le panier ---
 function clearCart() {
   localStorage.removeItem("cart");
-  panierCount = 0;
-  updatePanier();
   displayCart();
+  updateCartCount();
   showNotification("ℹ️ Panier vidé !", "info");
-}
-
-// --- Mettre à jour le compteur global ---
-function updateCartCount() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  panierLink.textContent = `Panier (${totalItems})`;
 }
 
 // --- Initialisation ---
@@ -126,22 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
     displayCart();
   }
 });
-// --- Fonction notification stylisée avec type ---
-function showNotification(message, type = "info") {
-  let notif = document.createElement("div");
-  notif.className = `notification ${type}`;
-  notif.textContent = message;
-  document.body.appendChild(notif);
 
-  // Afficher avec slide-in
-  setTimeout(() => notif.classList.add("show"), 100);
-
-  // Disparaître après 3s
-  setTimeout(() => {
-    notif.classList.remove("show");
-    setTimeout(() => notif.remove(), 500);
-  }, 3000);
-}
+// --- Gestion du formulaire de connexion ---
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
   const errorMessage = document.getElementById("error-message");
@@ -154,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value.trim();
 
       if (username === "admin" && password === "1234") {
-        window.location.href = "home.html"; // redirection après connexion
+        window.location.href = "home.html";
       } else {
         errorMessage.textContent = "Identifiants incorrects. Veuillez réessayer.";
       }
