@@ -3,65 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UVS Fashion - Panier</title>
-  <link rel="stylesheet" href="style.css"> <!-- si panier.html est dans le dossier page -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Confirmation - UVS Fashion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>
+    // Générer un numéro de commande unique
+    function generateOrderNumber() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const random = Math.floor(Math.random() * 90000) + 10000; // 5 chiffres aléatoires
+      return `UVS-${year}-${random}`;
+    }
+
+    // Charger le panier depuis localStorage et afficher le récapitulatif
+    document.addEventListener("DOMContentLoaded", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let recapContainer = document.getElementById("recap-items");
+      let recapTotal = document.getElementById("recap-total");
+      let orderNumberElement = document.getElementById("order-number");
+
+      // Générer et afficher le numéro de commande
+      const orderNumber = generateOrderNumber();
+      orderNumberElement.textContent = orderNumber;
+
+      recapContainer.innerHTML = "";
+      let total = 0;
+
+      cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        recapContainer.innerHTML += `
+          <tr>
+            <td><img src="${item.image}" alt="${item.name}" style="width:60px;height:auto;border-radius:4px;"> ${item.name}</td>
+            <td>${item.price} FCFA</td>
+            <td>${item.quantity}</td>
+            <td>${itemTotal} FCFA</td>
+          </tr>
+        `;
+      });
+
+      recapTotal.textContent = `${total} FCFA`;
+      // vider le panier après confirmation
+      localStorage.removeItem("cart");
+    });
+  </script>
 </head>
 <body>
   <!-- 🧭 HEADER -->
   <header>
-    <h1>UVS Fashion - Panier</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="hommes.html">Hommes</a></li>
-        <li><a href="femmes.html">Femmes</a></li>
-        <li><a href="panier.html" class="active" id="panier-link">Panier (0)</a></li>
-        <li><a href="connexion.html">Connexion</a></li>
-      </ul>
-    </nav>
+    <h1>Confirmation de paiement</h1>
   </header>
-  <!-- 🎨 BANNIÈRE PANIER -->
-<section class="cart-banner">
-  <img src="assets/images/banner3.jpg" alt="Banner Panier" class="banner-img">
-  <div class="banner-text">
-    <h2>🛍️ Bienvenue dans votre panier</h2>
-    <p>Profitez de nos offres exclusives et d’un paiement 100% sécurisé.</p>
-  </div>
-</section>
 
+  <!-- 🎉 SECTION CONFIRMATION -->
+  <section class="confirmation">
+    <div class="confirmation-box">
+      <h2>✅ Merci pour votre achat !</h2>
+      <p>Votre commande a été validée avec succès.</p>
+      <p>Un email de confirmation vous sera envoyé sous peu.</p>
 
-  <!-- 🛒 SECTION PANIER -->
-  <section class="cart">
-    <h2>Votre Panier</h2>
-    <div class="cart-container">
-      <table class="cart-table">
+      <!-- Numéro de commande -->
+      <p><strong>Numéro de commande :</strong> <span id="order-number"></span></p>
+
+      <!-- Récapitulatif -->
+      <h3>Récapitulatif de votre commande :</h3>
+      <table>
         <thead>
           <tr>
             <th>Produit</th>
             <th>Prix</th>
             <th>Quantité</th>
             <th>Total</th>
-            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="cart-items">
-          <!-- Les produits ajoutés apparaîtront ici via script.js -->
-        </tbody>
+        <tbody id="recap-items"></tbody>
       </table>
+      <p><strong>Total : </strong><span id="recap-total"></span></p>
 
-    <div class="cart-summary">
-  <h3>Total général : <span id="cart-total">0 FCFA</span></h3>
-  <div class="checkout-actions">
-  <button onclick="clearCart()" class="btn-clear">Vider le panier</button>
-  <a href="paiement.html" class="btn-checkout">Procéder au paiement</a>
-</div>
-
-
-
+      <a href="index.html" class="btn-home">Retour à l’accueil</a>
+    </div>
   </section>
 
-   <footer>
+  <!-- 🧾 FOOTER -->
+  <footer>
   <div class="footer-container">
     <!-- Catégories -->
     <div class="footer-section">
@@ -133,9 +157,5 @@
 </div>
 
 </footer>
-
-
-  <!-- ✅ Script relié -->
-  <script src="script.js"></script>
 </body>
 </html>

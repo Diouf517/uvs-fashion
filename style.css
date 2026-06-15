@@ -842,3 +842,288 @@ footer {
   position: relative;
   z-index: 2;
 }
+/* Bouton checkout */
+.btn-checkout {
+  display: inline-block;
+  background: #e91e63;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-checkout:hover {
+  background: #c2185b;
+}
+
+/* Page paiement */
+.payment {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.payment h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e91e63;
+}
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.payment-form label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.payment-form .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.btn-pay {
+  background: #4caf50;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-pay:hover {
+  background: #388e3c;
+}
+/* Confirmation */
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: #f5f5f5;
+}
+.confirmation-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+}
+.confirmation-box h2 {
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+.confirmation-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.confirmation-box table th,
+.confirmation-box table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  background: #e91e63;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-home:hover {
+  background: #c2185b;
+}
+.confirmation-box p strong {
+  color: #333;
+  font-weight: bold;
+}
+.confirmation-box #order-number {
+  color: #e91e63;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Bouton checkout (Procéder au paiement) */
+.btn-checkout {
+  display: inline-block;
+  background: #e91e63; /* Rose */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-checkout:hover {
+  background: #c2185b; /* Rose foncé au survol */
+}
+.checkout-actions {
+  display: flex;
+  justify-content: space-between; /* gauche/droite */
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Bouton Vider le panier (à gauche) */
+.btn-clear {
+  background: #FFD700; /* jaune doré */
+  color: #000;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-clear:hover {
+  background: #FFC107; /* doré plus foncé */
+}
+
+/* Bouton Procéder au paiement (à droite) */
+.btn-checkout {
+  display: inline-block;
+  background: #e91e63; /* rose */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-checkout:hover {
+  background: #c2185b; /* rose foncé */
+}
+/* Banner Panier */
+.cart-banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-banner .banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* l’image couvre toute la bannière */
+  filter: brightness(70%); /* assombrit légèrement pour mettre en valeur le texte */
+}
+
+.cart-banner .banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.cart-banner .banner-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.cart-banner .banner-text p {
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+.cart-banner {
+  position: relative;
+  width: 100%;
+  height: 450px; /* 🔥 plus grande hauteur */
+  margin: 40px 0 30px 0; /* espace au-dessus */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-banner .banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* 🔥 décale l’image vers le bas */
+  filter: brightness(70%);
+}
+
+.cart-banner .banner-text {
+  position: absolute;
+  top: 60%; /* 🔥 descend le texte plus bas */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.cart-banner .banner-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.cart-banner .banner-text p {
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+/* Bannières Hommes, Femmes, Panier */
+.banner1, .banner2, .cart-banner {
+  position: relative;
+  width: 100%;
+  height: 450px; /* 🔥 agrandi la hauteur */
+  margin: 40px 0 30px 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.banner1 .banner-img,
+.banner2 .banner-img,
+.cart-banner .banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* 🔥 décale l’image vers le bas */
+  filter: brightness(70%);
+}
+
+.banner1 .banner-text,
+.banner2 .banner-text,
+.cart-banner .banner-text {
+  position: absolute;
+  top: 60%; /* 🔥 descend le texte */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.banner1 .banner-text h2,
+.banner2 .banner-text h2,
+.cart-banner .banner-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.banner1 .banner-text p,
+.banner2 .banner-text p,
+.cart-banner .banner-text p {
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
