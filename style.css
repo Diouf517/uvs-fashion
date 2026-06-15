@@ -1,0 +1,804 @@
+/* 🌐 Style global */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* 🧭 HEADER */
+header {
+  background-color: #1a1a1a; /* noir */
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 20px;
+  color: #e91e63; /* rose vif */
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  background-color: #e91e63;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #c2185b;
+}
+
+/* 🎯 BANNIÈRE */
+.banner {
+  background: url("assets/images/banner.png") no-repeat center center/cover;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* effet sombre */
+}
+
+.banner-content {
+  position: relative;
+  color: #fff;
+  z-index: 2;
+}
+
+.banner-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.banner-content button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.banner-content button:hover {
+  background-color: #c2185b;
+}
+
+/* 👗 SECTION À PROPOS */
+.about {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+/* 🛍️ PRODUITS */
+.products {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  color: #e91e63;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product h3 {
+  margin: 10px 0;
+}
+
+.product button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product button:hover {
+  background-color: #c2185b;
+}
+
+/* 📞 CONTACT */
+.contact {
+  background-color: #f1f1f1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+/* 🧾 FOOTER */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+.about {
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+.about h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+.about p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.product h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 16px;
+  color: #e91e63; /* prix en rose */
+  font-weight: bold;
+}
+
+.product button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product button:hover {
+  background-color: #c2185b;
+}
+/* 📞 CONTACT */
+.contact {
+  background-color: #fafafa;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px solid #e91e63;
+}
+
+.contact h2 {
+  font-size: 26px;
+  color: #e91e63;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.contact p {
+  font-size: 16px;
+  color: #444;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact p span {
+  font-size: 20px;
+  color: #e91e63;
+}
+
+.contact a {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+/* État initial : invisible et décalé */
+.product {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+/* État visible : animé */
+.product.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Effet hover sur les produits */
+.product {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05); /* zoom léger */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre élégante */
+  border-radius: 6px; /* arrondi léger */
+}
+.product:hover img {
+  filter: brightness(0.9) saturate(1.2);
+}
+.product:hover h3 {
+  text-decoration: underline;
+  color: #e91e63;
+}
+
+/* Bannière Hommes */
+.banner-hommes {
+  background: url("assets/images/banner-hommes.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* Bannière Femmes */
+.banner-femmes {
+  background: url("assets/images/banner-femmes.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.banner h2,
+.banner-hommes h2,
+.banner-femmes h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.banner p,
+.banner-hommes p,
+.banner-femmes p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+
+
+/* Bannière Hommes */
+.banner-hommes {
+  position: relative;
+  background: url("../assets/images/banner-hommes.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.banner-hommes::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.banner-hommes .banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bannière Femmes */
+.banner-femmes {
+  position: relative;
+  background: url("../assets/images/banner-femmes.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.banner-femmes::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.banner-femmes .banner-content {
+  position: relative;
+  z-index: 1;
+}
+/* 🛒 PAGE PANIER */
+.cart {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.cart h2 {
+  font-size: 28px;
+  color: #e91e63;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th {
+  background-color: #e91e63;
+  color: #fff;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.cart-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.cart-summary h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.checkout-btn {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #ffd700;
+  color: #333;
+}
+/* 🔔 Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50; /* vert succès */
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 🔔 Notifications stylisées */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+  color: #fff;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Couleurs par type */
+.notification.success { background: #4caf50; } /* vert */
+.notification.error   { background: #f44336; } /* rouge */
+.notification.info    { background: #2196f3; } /* bleu */
+/* 🔔 Notifications stylisées */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: -300px; /* commence hors écran */
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
+  color: #fff;
+}
+
+/* Couleurs par type */
+.notification.success { background: #4caf50; } /* vert */
+.notification.error   { background: #f44336; } /* rouge */
+.notification.info    { background: #2196f3; } /* bleu */
+
+/* Quand la notif est visible */
+.notification.show {
+  right: 20px; /* glisse vers l’intérieur */
+  opacity: 1;
+}
+/* 🔑 Connexion */
+.login {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login h2 {
+  margin-bottom: 20px;
+  color: #e91e63;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #ffd700;
+  color: #333;
+}
+
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #e91e63;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+/* 🔔 Notifications stylisées */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: -300px; /* commence hors écran */
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
+  color: #fff;
+}
+
+/* Couleurs par type */
+.notification.success { background: #4caf50; } /* vert */
+.notification.error   { background: #f44336; } /* rouge */
+.notification.info    { background: #2196f3; } /* bleu */
+
+/* Quand la notif est visible */
+.notification.show {
+  right: 20px; /* glisse vers l’intérieur */
+  opacity: 1;
+}
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #f4c542; /* couleur accent */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 13px;
+}
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Couleurs par réseau */
+.facebook { background: #3b5998; }   /* bleu Facebook */
+.instagram { background: #e1306c; } /* rose Instagram */
+.tiktok { background: #000; }       /* noir TikTok */
+.youtube { background: #ff0000; }   /* rouge YouTube */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #444;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #f4c542; /* couleur accent au survol */
+  transform: scale(1.2);
+}
+.footer-section.social {
+  text-align: center; /* centre le titre et les icônes */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #444;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #f4c542; /* couleur accent au survol */
+  transform: scale(1.2);
+}
+.payment-methods {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-methods span {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.payment-methods a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+/* Couleurs spécifiques */
+.wave { background: #00AEEF; }       /* bleu Wave */
+.orange { background: #FF7900; }    /* orange Orange Money */
+.free { background: #008000; }      /* vert Free Money */
+
+.payment-methods a:hover {
+  transform: scale(1.2);
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.payment-methods {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.payment-methods span {
+  color: #fff;
+  font-weight: bold;
+}
+
+.payment-methods img {
+  height: 35px;   /* taille uniforme */
+  width: auto;
+  transition: transform 0.3s;
+}
+
+.payment-methods img:hover {
+  transform: scale(1.2); /* effet zoom au survol */
+}
+.footer-section i {
+  margin-right: 8px;
+  color: #f4c542; /* couleur accent */
+  font-size: 16px;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}

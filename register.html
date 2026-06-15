@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVS Fashion - Créer un compte</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- 🧭 HEADER -->
+  <header>
+    <h1>UVS Fashion - Créer un compte</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="hommes.html">Hommes</a></li>
+        <li><a href="femmes.html">Femmes</a></li>
+        <li><a href="panier.html" id="panier-link">Panier (0)</a></li>
+        <li><a href="connexion.html">Connexion</a></li>
+        <li><a href="register.html" class="active">Créer un compte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 📝 FORMULAIRE D’INSCRIPTION -->
+  <section class="login">
+    <h2>Créer un compte</h2>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="fullname">Nom complet</label>
+        <input type="text" id="fullname" placeholder="Entrez votre nom complet" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" placeholder="Entrez votre email" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Nom d’utilisateur</label>
+        <input type="text" id="username" placeholder="Choisissez un nom d’utilisateur" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="Créez un mot de passe" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirmer le mot de passe</label>
+        <input type="password" id="confirm-password" placeholder="Confirmez votre mot de passe" required>
+      </div>
+      <button type="submit" class="login-btn">S’inscrire</button>
+    </form>
+    <p class="register-link">Déjà inscrit ? <a href="connexion.html">Se connecter</a></p>
+  </section>
+
+  <footer>
+  <div class="footer-container">
+    <!-- Catégories -->
+    <div class="footer-section">
+      <h3>Catégories</h3>
+      <ul>
+        <li><a href="hommes.html">Hommes</a></li>
+        <li><a href="femmes.html">Femmes</a></li>
+        <li><a href="panier.html">Panier</a></li>
+      </ul>
+    </div>
+
+    <!-- Service client -->
+    <div class="footer-section">
+      <h3>Service client</h3>
+      <ul>
+        <li><a href="#">Aide & FAQ</a></li>
+        <li><a href="#">Suivi de commande</a></li>
+        <li><a href="#">Retours & échanges</a></li>
+      </ul>
+    </div>
+
+    <!-- Informations -->
+    <div class="footer-section">
+      <h3>Informations</h3>
+      <ul>
+        <li><a href="#">Conditions générales</a></li>
+        <li><a href="#">Politique de confidentialité</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+  <h3>Contact</h3>
+  <p><i class="fas fa-map-marker-alt"></i> Pikine, Dakar – Sénégal</p>
+  <p><i class="fas fa-phone"></i> +221 78 438 39 11</p>
+  <p><i class="fas fa-envelope"></i> contact@uvsfashion.sn</p>
+</div>
+
+
+    <!-- Réseaux sociaux -->
+<div class="footer-section">
+  <h3>Suivez-nous</h3>
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+
+    <!-- Newsletter -->
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Votre email" required>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2026 UVS Fashion - Tous droits réservés</p>
+  <div class="payment-methods">
+    <span>Paiements acceptés :</span>
+    <img src="../assets/icons/wave.jpeg" alt="Wave">
+    <img src="../assets/icons/orange-money.jpeg" alt="Orange Money">
+  </div>
+</div>
+
+</footer>
+
+  <!-- ✅ Script de validation avec notification -->
+  <script>
+    // --- Fonction notification stylisée ---
+    function showNotification(message, type = "info") {
+      let notif = document.createElement("div");
+      notif.className = `notification ${type}`;
+      notif.textContent = message;
+      document.body.appendChild(notif);
+
+      // Slide-in
+      setTimeout(() => notif.classList.add("show"), 100);
+
+      // Disparaît après 3s
+      setTimeout(() => {
+        notif.classList.remove("show");
+        setTimeout(() => notif.remove(), 500);
+      }, 3000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const registerForm = document.getElementById("register-form");
+
+      if (registerForm) {
+        registerForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const password = document.getElementById("password").value.trim();
+          const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+          if (password !== confirmPassword) {
+            showNotification("❌ Les mots de passe ne correspondent pas.", "error");
+            return;
+          }
+
+          // ✅ Inscription réussie (simulation)
+          showNotification("✅ Compte créé avec succès !", "success");
+
+          // Redirection après 2 secondes
+          setTimeout(() => {
+            window.location.href = "connexion.html";
+          }, 2000);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
